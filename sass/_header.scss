@@ -1,0 +1,87 @@
+.header {
+  min-height: 40rem;
+  height: 100vh;
+  grid-column: 1/-1;
+  background-color: $color-grey-dark-3;
+  border-bottom: 5px solid $color-grey-dark-2;
+  padding: 1.2rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  &__logo {
+    width: 4rem;
+    height: 4rem;
+  }
+  &::before {
+    // content: "";
+    // background-image: url("../images/devgnox_logo_160x160.png");
+    // width: 5rem;
+    // height: 5rem;
+    // position: absolute;
+  }
+}
+
+.nav {
+  display: inline-block;
+  align-self: center;
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    &:not(:last-child) {
+      margin-right: 2.5rem;
+    }
+  }
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: $color-grey-light-1;
+    transition: all 0.3s ease;
+  }
+}
+
+.hero {
+  flex-basis: 100%;
+  text-align: center;
+
+  &__subtext {
+    font-size: 3rem;
+    color: $color-grey-light-2;
+    font-weight: 500;
+    &--1 {
+      margin-bottom: -1.8%;
+      margin-right: 45%;
+    }
+    &--2 {
+      margin-left: 48%;
+      margin-top: -3.5%;
+    }
+    @media only screen and(max-width:32.8em) {
+      font-size: 2.4rem;
+      &--1 {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-129%, 5%);
+      }
+      &--2 {
+        margin-left: 37%;
+      }
+    }
+    @media only screen and(max-width:32.8em) {
+      position: relative;
+    }
+  }
+  &__btn:link,
+  &__btn:visited {
+    text-decoration: none;
+    color: $color-grey-light-1;
+    padding: 2rem;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 0 auto;
+  }
+}

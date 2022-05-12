@@ -1,0 +1,110 @@
+%heading {
+  font-family: $font-display;
+  font-weight: 400;
+}
+.heading-1 {
+  @extend %heading;
+  margin: 0 auto !important;
+  overflow: hidden;
+  width: min-content;
+  background: #390b75;
+  background: linear-gradient(to right, #390b75 0%, #5b21a6 47%, #220943 100%);
+  background: -moz-linear-gradient(
+    to right,
+    #390b75 0%,
+    #5b21a6 47%,
+    #220943 100%
+  );
+  background: -webkit-linear-gradient(
+    to right,
+    #390b75 0%,
+    #5b21a6 47%,
+    #220943 100%
+  );
+  text-transform: uppercase;
+  font-size: 10rem;
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 700;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  animation: primary-heading-animation-rev 0.75s ease forwards;
+  @media only screen and(max-width:32.8em) {
+    font-size: 7rem;
+  }
+}
+
+.heading-1:hover {
+  animation: primary-heading-animation 0.5s ease-in forwards;
+}
+
+.heading-2 {
+  @extend %heading;
+  color: $color-grey-dark-1;
+  font-weight: 300;
+  font-size: 3.2rem;
+  position: relative;
+  text-transform: uppercase;
+  &::before {
+    content: ">";
+    color: $color-secondary-light;
+    font-size: 3.3rem;
+    font-weight: 600;
+    display: inline-block;
+    position: absolute;
+    margin-left: -2.3rem;
+  }
+  &::after {
+    content: "";
+    width: 1.8rem;
+    height: 2.3px;
+    border-radius: 10px;
+    background: $color-grey-dark-1;
+    opacity: 0;
+    display: inline-block;
+    animation: blink 0.6s linear infinite alternate;
+  }
+}
+.heading-3 {
+  @extend %heading;
+  font-size: 5rem;
+  font-style: italic;
+  text-transform: uppercase;
+}
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes primary-heading-animation {
+  0% {
+    background-size: 100%;
+  }
+  80% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 650%;
+  }
+}
+@keyframes primary-heading-animation-rev {
+  0% {
+    background-size: 650%;
+  }
+  40% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
